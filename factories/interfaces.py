@@ -20,5 +20,10 @@ class BaseDeck(ABC):
 
 class BaseNote(ABC):
     @abstractmethod
-    def create_note(self, back, front):
+    def create_note(self, back: str, front: str):
+        pass
+
+class BasePackage(ABC):
+    @abstractmethod
+    def create_package(self, deck: BaseDeck):
         pass
