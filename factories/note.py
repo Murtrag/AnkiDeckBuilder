@@ -9,22 +9,27 @@ class SimpleNote(BaseNote):
         self,
         deck_model: BaseDeckModel,
         sound_strategy: 'BaseAudio',
-        front: str,
+        word: str,
         back: str
         ):
 
-        prefix, *front = front.split(" ")
+        prefix, *front = word.split(" ")
         front = " ".join(front)
+        sound_name = front if front != "" else prefix
+            
 
-        audio_obj = sound_strategy(front)
+        audio_obj = sound_strategy(sound_name)
         # sound_url = audio_obj.get_audio_url()
 
         context = AudioContext()
         context.set_strategy(sound_strategy)
-        context.get_audio(front)
+        try:
+            context.get_audio(sound_name)
+        except Exception as e:
+            print(e)
 
-        front_html = f'<span style="color: rgb(0, 0, 255);"><b>{prefix} {front}</b></span><br>\
-        [sound:{front}.mp3]\
+        front_html = f'<span style="color: rgb(0, 0, 255);"><b>{word}</b></span><br>\
+        [sound:{sound_name}.mp3]\
         '
         return Note(
             model=deck_model,
