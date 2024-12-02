@@ -189,3 +189,4 @@ env/
 audio/
 user_raw_list/
 *.apkg
+*.pyc

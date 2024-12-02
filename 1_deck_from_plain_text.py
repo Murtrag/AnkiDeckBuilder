@@ -1,11 +1,17 @@
 from time import sleep
-from strategies.dutch_strategy import DutchAudio
+from strategies.dutch_strategy import DutchAudio, DutchPodAudio
 from factories import SimpleDeckModel, SimpleDeck, SimpleNote, SimplePackage
+import sys
+import os
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Define the name of the new deck
 # This should read folder with user generated .txt files
-file_with_plain_text = input('Input file name:\n') 
-deck_name = input('Output deck name:\n')
+# file_with_plain_text = input('Input file name:\n') 
+file_with_plain_text = "user_raw_list/test.txt" 
+# deck_name = input('Output deck name:\n')
+deck_name = "test3"
 
 
 # Create a new deck model
@@ -30,7 +36,7 @@ for line in words_lines:
         print(f'skipped: {e}')
         continue
     # Create note
-    note = SimpleNote().create_note(deck_model, DutchAudio, front, back)
+    note = SimpleNote().create_note(deck_model, DutchPodAudio, front, back)
     deck.add_note(note)
 
 # Generate package
