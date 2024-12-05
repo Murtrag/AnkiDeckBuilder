@@ -1,5 +1,8 @@
 import os
 import requests
+from bs4 import BeautifulSoup
+import re
+from urllib.request import urlretrieve
 
 headers = {
     "Host": "voice.reverso.net",
@@ -28,3 +31,66 @@ def download_audio(sound_url, file_name, audio_dir="audio", headers=headers):
         f.write(response.content)
     
     print(f"file saved in: {file_path}")
+
+
+# image code dump by raheel
+
+
+# just a regular expression to check if scrapped url have http init or not
+
+def isHttps(text):
+    pattern = r"^https://"
+    return re.match(pattern, text) is not None
+
+
+# scrapping images from google on the bases of query word
+
+def scrape_google_images(query, num_images=10):
+    query = query.replace(' ', '+')
+    url = f"https://www.google.com/search?hl=en&tbm=isch&q={query}"
+    headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"}
+    response = requests.get(url, headers=headers)
+    
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, "html.parser")
+        images = []
+        for img in soup.find_all("img")[:num_images]:
+            if(isHttps(img["src"])):
+                images.append(img["src"])
+        return images
+    else:
+        print("Error:", response.status_code)
+        return []
+
+# This function will download image from url to path using urlib
+
+def download_image_with_urllib(url, save_path):
+    try:
+        urlretrieve(url, save_path)
+        print(f"Image successfully downloaded to {save_path}")
+    except Exception as e:
+        print(f"Failed to download the image: {e}")
+
+# this will return the url of image either you can use this url directly or download this image in next function
+
+def getImageUrl(query):
+    images = scrape_google_images(query,num_images=10)
+
+    image_url = images[0]
+    return image_url
+
+# this function will download the image to the path you can change the path 
+
+def saveImageOfQuery(query):
+
+    image_url = getImageUrl(query)
+    save_path = f"C:/Users/raheel/Desktop/imagestosave/{query}.jpg" # here you can add your path 
+    download_image_with_urllib(image_url, save_path)
+
+
+# testing code uncomment below
+
+# words =["vortel","groente"]
+
+# for word in words:
+#     saveImageOfQuery(word)
