@@ -9,9 +9,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 # Define the name of the new deck
 # This should read folder with user generated .txt files
 # file_with_plain_text = input('Input file name:\n') 
-file_with_plain_text = "user_raw_list/test.txt" 
+file_with_plain_text = "user_raw_list/lesson_1.txt" 
 # deck_name = input('Output deck name:\n')
-deck_name = "test3"
+deck_name = "lesson_1"
 
 
 # Create a new deck model

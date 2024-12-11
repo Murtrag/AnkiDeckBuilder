@@ -28,7 +28,7 @@ class SimpleNote(BaseNote):
         except Exception as e:
             print(e)
 
-        front_html = f'<span style="color: rgb(0, 0, 255);"><b>{word}</b></span><br>\
+        front_html = f'<span style="color: rgb(0, 0, 255); background-color: rgb(0, 170, 0);"><b>{word}</b></span><br>\
         [sound:{sound_name}.mp3]\
         '
         return Note(
