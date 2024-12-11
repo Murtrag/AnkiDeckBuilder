@@ -1,3 +1,5 @@
+import sys
+import os
 from time import sleep
 from strategies.dutch_strategy import DutchAudio, DutchPodAudio
 from factories import SimpleDeckModel, SimpleDeck, SimpleNote, SimplePackage
@@ -42,3 +44,10 @@ package = SimplePackage().create_package(deck)
 
 # Save deck
 package.write_to_file(f'{deck_name}.apkg')
+
+def main():
+    # Call the main logic here
+    pass
+
+if __name__ == "__main__":
+    main()
