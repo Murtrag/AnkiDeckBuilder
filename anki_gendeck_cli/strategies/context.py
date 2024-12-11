@@ -1,4 +1,4 @@
-from utils.download import download_audio
+from ..utils.download import download_audio
 
 class AudioContext:
     def __init__(self):
