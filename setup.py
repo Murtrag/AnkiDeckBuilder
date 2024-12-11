@@ -7,7 +7,7 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'anki-gendeck=anki_gendeck_cli.1_deck_from_plain_text:main',
+            'anki-gendeck=anki_gendeck_cli.deck_from_plain_text:main',
         ],
     },
     install_requires=[
