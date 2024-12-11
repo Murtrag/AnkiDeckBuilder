@@ -1,8 +1,8 @@
 import sys
 import os
 from time import sleep
-from strategies.dutch_strategy import DutchAudio, DutchPodAudio
-from factories import SimpleDeckModel, SimpleDeck, SimpleNote, SimplePackage
+from .strategies.dutch_strategy import DutchAudio, DutchPodAudio
+from .factories import SimpleDeckModel, SimpleDeck, SimpleNote, SimplePackage
 import sys
 import os
 
