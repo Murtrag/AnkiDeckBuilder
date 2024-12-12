@@ -65,6 +65,7 @@ class DutchPodAudio(BaseAudio):
         source_tag = soup.select_one("audio source")
         
         if not source_tag or not source_tag.get("src"):
+            print(response.text)
             raise Exception("Audio URL not found in the response.")
         
         return source_tag["src"]
