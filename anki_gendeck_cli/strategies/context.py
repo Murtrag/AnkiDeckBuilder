@@ -20,7 +20,7 @@ class AudioContext:
             audio_dir=self.audio_dir,
             headers=audio_obj.headers
         )
-        return join(self,audio_dir, file_name)
+        return join(self.audio_dir, f"{file_name}.mp3")
 
 
     
