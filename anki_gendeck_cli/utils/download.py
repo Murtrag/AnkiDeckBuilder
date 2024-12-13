@@ -19,14 +19,14 @@ headers = {
     "Priority": "u=4"
 }
 
-def download_audio(sound_url, file_name, audio_dir="audio", headers=headers):
+def download_media(sound_url, file_name, audio_dir="audio", headers=headers):
     if not os.path.exists(audio_dir):
         os.makedirs(audio_dir)
     
     response = requests.get(sound_url, headers=headers)
     response.raise_for_status()
 
-    file_path = os.path.join(audio_dir, f"{file_name}.mp3")
+    file_path = os.path.join(audio_dir, file_name)
     with open(file_path, 'wb') as f:
         f.write(response.content)
     
