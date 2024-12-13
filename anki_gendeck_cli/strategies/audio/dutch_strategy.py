@@ -23,7 +23,7 @@ class DutchAudio(BaseAudio):
             "Priority": "u=4"
         }
 
-    def get_media_url(self):
+    def get_audio_url(self):
         base_url = "https://voice.reverso.net/RestPronunciation.svc/v1/output=json/GetVoiceStream"
         encoded_text = base64.b64encode(self._text.encode("utf-8")).decode("utf-8")
         url = f"{base_url}/voiceName={self._voice}?voiceSpeed={self._speed}&inputText={encoded_text}"
@@ -47,7 +47,7 @@ class DutchPodAudio(BaseAudio):
         }
         self._referrer = "https://www.dutchpod101.com/dutch-dictionary/"
 
-    def get_media_url(self) -> str:
+    def get_audio_url(self) -> str:
         payload = {
             "post": "dictionary_reference",
             "search_query": self._text
