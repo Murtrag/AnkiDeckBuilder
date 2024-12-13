@@ -1,0 +1,2 @@
+recursive-include anki_gendeck_cli/strategies/audio *
+recursive-include anki_gendeck_cli/strategies/images *

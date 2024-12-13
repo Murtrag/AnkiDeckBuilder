@@ -11,6 +11,7 @@ setup(
         'anki_gendeck_cli.factories',
         'anki_gendeck_cli.utils',
     ],
+    include_package_data=True,
     description='A CLI tool for generating Anki decks from plain text.',
     install_requires=[
         'beautifulsoup4==4.12.3',
