@@ -1,6 +1,6 @@
 from genanki import Note
 from .interfaces import BaseNote, BaseDeckModel
-from ..strategies import AudioContext
+from ..strategies.audio import AudioContext
 
 
 
