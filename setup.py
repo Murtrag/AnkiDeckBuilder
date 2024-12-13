@@ -3,6 +3,14 @@ from setuptools import setup, find_packages
 setup(
     name='anki_gendeck_cli',
     version='1.0.0',
+    packages=[
+        'anki_gendeck_cli',
+        'anki_gendeck_cli.strategies',
+        'anki_gendeck_cli.strategies.audio',
+        'anki_gendeck_cli.strategies.images',
+        'anki_gendeck_cli.factories',
+        'anki_gendeck_cli.utils',
+    ],
     description='A CLI tool for generating Anki decks from plain text.',
     install_requires=[
         'beautifulsoup4==4.12.3',
