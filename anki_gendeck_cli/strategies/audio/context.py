@@ -6,7 +6,7 @@ class AudioContext:
     def __init__(self, audio_dir="audio"):
         self.strategy = None
         self.audio_dir = audio_dir
-        self.download = download_audio
+        self.download = download_media
 
     def set_strategy(self, strategy: 'BaseAudio') -> None:
         self.strategy = strategy

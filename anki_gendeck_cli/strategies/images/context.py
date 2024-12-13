@@ -6,7 +6,7 @@ class ImageContext:
     def __init__(self, image_dir="image"):
         self.strategy = None
         self.image_dir = image_dir
-        self.download = download_audio
+        self.download = download_media
 
     def set_strategy(self, strategy: 'BaseImage') -> None:
         self.strategy = strategy
