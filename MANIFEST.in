@@ -1,2 +1,5 @@
 recursive-include anki_gendeck_cli/strategies/audio *
 recursive-include anki_gendeck_cli/strategies/images *
+include anki_gendeck_cli/strategies/__init__.py
+include anki_gendeck_cli/strategies/audio/__init__.py
+include anki_gendeck_cli/strategies/images/__init__.py
