@@ -1,6 +1,6 @@
 from typing import List
 from os.path import join
-from ..utils.download import download_media
+from anki_gendeck_cli.utils.download import download_media
 
 class ImageContext:
     def __init__(self, image_dir="image"):

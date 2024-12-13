@@ -1,5 +1,5 @@
-from abc import ABC, abstractmethod
 import genanki
+from abc import ABC, abstractmethod
 
 class BaseDeckModel(ABC):
     @abstractmethod

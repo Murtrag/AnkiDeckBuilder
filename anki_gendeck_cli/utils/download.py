@@ -1,7 +1,7 @@
+import re
 import os
 import requests
 from bs4 import BeautifulSoup
-import re
 from urllib.request import urlretrieve
 
 headers = {
