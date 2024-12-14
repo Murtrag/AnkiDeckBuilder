@@ -1,4 +1,3 @@
-from typing import List
 from os.path import join
 from anki_gendeck_cli.utils.download import download_media
 

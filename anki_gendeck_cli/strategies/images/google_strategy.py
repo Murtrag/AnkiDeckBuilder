@@ -1,3 +1,4 @@
+from typing import List
 from .interface import BaseImage
 
 class GoogleImages(BaseImage):
